@@ -1,0 +1,23 @@
+nav{
+    position: fixed;
+    left: 50%;
+    bottom: 3rem;
+    transform: translateX(-50%);
+    background: #292c2e80;
+    padding: .8rem 1rem;
+    display: flex;
+    gap: 1.2rem;
+    border-radius: 1rem;
+    font-size: 1.4rem;
+    backdrop-filter: blur(15px);
+    text-align: center;
+}
+
+nav a{
+    display: flex;
+    padding: .8rem;
+    border-radius: 100%;
+}
+nav a.activity{
+    background: var(--color-bg-variant);
+}
