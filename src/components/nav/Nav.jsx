@@ -8,23 +8,22 @@ function Nav() {
   const [activity, setActivity] = useState("#home");
 
   // الأقسام التي نراقبها
-  const sections = ["home", "about", "services", "projects", "contact"];
-
+  const sections = ["home", "about", "skills", "services", "projects", "contact"]
+  console.log(sections)
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            setActivity(`#${entry.target.id}`);
-          }
-        });
-      },
-      {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.6, // تحكم في النسبة التي تحدد بداية القسم
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        setActivity(`#${entry.target.id}`);
       }
-    );
+    });
+  },
+  {
+    threshold: 0.3, // جرب هذا الرقم بدل 0.6
+  }
+);
+    console.log(observer)
 
     sections.forEach(id => {
       const section = document.getElementById(id);
